@@ -3,23 +3,22 @@
 using namespace std;
 int main()
 {
-    ofstream ofile;
-    ofile.open("firstinputfile.dat");
-
-    ofile << "This is a line in the file" << endl;
-    ofile << "This is the second line in the file" << endl;
-
-    cout << "Data written in the file" << endl;
-
-    ifstream ifile;
+    char line[100];
+    fstream file;
+    file.open("firstinputfile.txt");
+    cout << "Enter a line: ";
+    cin.getline(line, 100);
+    file << line << endl;
+    cout << "Line written onto file.\n";
+    cout << "Data written in the file." << endl;
     cout << "Reading data from a file:-" << endl;
     char ch;
-    while (!ifile.eof())
+    while (!file.eof())
     {
-        ifile.get(ch);
-        ifile >> ch;
+        file.get(ch);
+        file >> ch;
         cout << ch << endl;
-        ifile.close();
+        file.close();
         return 0;
     }
 }
