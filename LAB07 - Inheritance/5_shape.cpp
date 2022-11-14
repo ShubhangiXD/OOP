@@ -59,7 +59,7 @@ public:
     }
 };
 
-class show : public shape, public circle, public triangle, public rectangle
+class show : virtual public shape, public circle, public triangle, public rectangle
 {
 public:
     void display()
