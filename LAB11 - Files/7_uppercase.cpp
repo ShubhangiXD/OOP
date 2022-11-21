@@ -7,24 +7,25 @@ int main()
     ofstream of;
     of.open("abc.txt", ios::out);
     string c;
-    cout << "Enter five different names: " << endl;
-    for (int i = 1; i <= 5; i++)
-    {
-        cin >> c;
-        of << c;
-        of << "\n";
-    }
+    cout << "Enter the contents of the file: " << endl;
+    cin >> c;
+    of << c;
+    of << "\n";
     of.close();
+
     ifstream iff;
     iff.open("abc.txt");
-    cout << "Enter the line you want to seek: \n";
-    int n;
-    cin >> n;
-    iff.seekg(n, ios_base::beg);
+    char ch;
+    int i = 0;
     while (!iff.eof())
     {
-        char ch;
         iff.get(ch);
+        if (ch >= 65 && ch <= 90)
+        {
+            ch += 32;
+        }
+        else if (ch >= 97 && ch <= 122)
+            ch -= 32;
         cout << ch;
     }
     iff.close();
