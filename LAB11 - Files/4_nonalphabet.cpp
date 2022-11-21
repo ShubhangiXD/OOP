@@ -22,6 +22,6 @@ int main()
         if ((ch >= 0 && ch < 65) || (ch > 90 && ch < 97) || (ch > 122))
             c++;
     }
-    cout << "No of non-alphabetic characters" << c << endl;
+    cout << "No of non-alphabetic characters:" << c << endl;
     iff.close();
 }
