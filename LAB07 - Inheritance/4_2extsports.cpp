@@ -5,7 +5,7 @@ class student
 {
 public:
     string name;
-    int roll, age;
+    int roll, age, sem;
 
     void get_in()
     {
@@ -13,6 +13,8 @@ public:
         cin >> name;
         cout << "Enter the age and the roll number of the student: \n";
         cin >> roll >> age;
+        cout << "Enter the semester of the student: \n";
+        cin >> sem;
     }
 };
 
